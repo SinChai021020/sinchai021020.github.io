@@ -135,21 +135,21 @@
         .dropdown-content a { display: block; padding: 12px 16px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 2px; }
         .dropdown-content a:hover { background: var(--primary); color: white; }
 
-        /* --- LAYOUT SWITCHING --- */
+        /* --- VIEW TRANSITIONS --- */
         .container { max-width: 1200px; margin: 0 auto; padding: 0 5% 100px; position: relative; }
         .view-section { display: none; }
         .view-section.active { display: block; animation: fastFadeIn 0.15s ease-out; }
         @keyframes fastFadeIn { from { opacity: 0; } to { opacity: 1; } }
 
         /* --- TITLES --- */
-        .category-view-header { text-align: center; margin-bottom: 60px; padding-top: 60px; }
+        .category-view-header { text-align: center; margin-bottom: 60px; padding-top: 20px; }
         .category-view-header h2 { font-size: 2.8rem; font-weight: 800; letter-spacing: -2px; color: var(--text-dark); position: relative; display: inline-block; }
         .category-view-header h2::after { content: ""; position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 60px; height: 4px; background: var(--primary); border-radius: 2px; }
 
         .section-title { text-align: center; margin-bottom: 50px; margin-top: 40px; }
         .section-title h2 { font-size: 3rem; font-weight: 800; letter-spacing: -2px; background: linear-gradient(to right, var(--text-dark), var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* --- CARDS & LISTS --- */
+        /* --- RESTAURANT CARDS --- */
         .restaurant-list { display: flex; flex-direction: column; gap: 25px; max-width: 950px; margin: 0 auto; }
         .article-card { 
             background: rgba(255, 255, 255, 0.8); 
@@ -172,27 +172,62 @@
         .article-content h2, .article-content h4 { font-size: 1.5rem; margin-bottom: 8px; letter-spacing: -0.5px; }
         .badge { background: #f1f5f9; color: var(--text-dark); padding: 5px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 800; margin-bottom: 10px; width: fit-content; border: 1px solid rgba(0,0,0,0.05); }
 
-        /* --- BACK BUTTON --- */
-        .back-btn-wrapper { margin-top: 40px; margin-bottom: 10px; }
+        /* --- BUTTONS --- */
+        .back-btn-wrapper { margin-top: 40px; margin-bottom: 10px; display: flex; gap: 10px; }
         .back-btn-compact {
             background: white; border: 1px solid #e2e8f0; padding: 8px 18px; border-radius: 12px; font-weight: 700; font-size: 0.85rem; color: var(--text-dark); cursor: pointer; transition: 0.2s; display: inline-flex; align-items: center; gap: 8px; box-shadow: var(--shadow-sm);
         }
         .back-btn-compact:hover { border-color: var(--primary); color: var(--primary); transform: translateX(-3px); }
+        .home-btn { border-color: var(--primary); color: var(--primary); }
 
-        /* --- DETAIL PAGE --- */
-        .detail-card { background: white; padding: 50px; border-radius: var(--radius-xl); box-shadow: var(--shadow-sm); border: 1px solid rgba(0,0,0,0.02); margin-top: 5px; }
-        .main-preview-img { width: 100%; height: 450px; object-fit: cover; border-radius: var(--radius-lg); margin-bottom: 20px; box-shadow: var(--shadow-sm); background-color: #eee; }
-        .food-info-panel { margin-bottom: 30px; text-align: center; min-height: 80px; padding: 0 20px; }
-        .food-description-text { font-size: 1.1rem; color: var(--text-muted); font-style: italic; line-height: 1.6; opacity: 1; }
+        /* --- DETAIL LAYOUT (SPLIT SCREEN) --- */
+        .detail-card { 
+            background: white; 
+            padding: 40px; 
+            border-radius: var(--radius-xl); 
+            box-shadow: var(--shadow-sm); 
+            border: 1px solid rgba(0,0,0,0.02); 
+            margin-top: 5px; 
+        }
+
+        .detail-header { margin-bottom: 25px; border-bottom: 1px solid #f1f5f9; padding-bottom: 15px; }
+        .detail-header h2 { font-size: 1.8rem; margin-bottom: 5px; }
+
+        .detail-split-layout {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 35px;
+            align-items: start;
+        }
+
+        .main-preview-img { 
+            width: 100%; 
+            height: 380px; 
+            object-fit: cover; 
+            border-radius: var(--radius-lg); 
+            margin-bottom: 15px; 
+            box-shadow: var(--shadow-sm); 
+            background-color: #eee; 
+        }
+
+        .food-info-panel { 
+            margin-bottom: 15px; 
+            text-align: left; 
+            min-height: 60px; 
+            padding: 15px;
+            background: #f8fafc;
+            border-radius: var(--radius-md);
+        }
+        .food-description-text { font-size: 1rem; color: var(--text-muted); font-style: italic; line-height: 1.5; }
 
         /* --- REVIEWS --- */
         .review-section-container { margin-top: 30px; }
         .review-title { font-size: 1.8rem; font-weight: 800; margin-bottom: 20px; color: var(--text-dark); }
         .review-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .review-card-isolated { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); padding: 30px; border-radius: 24px; box-shadow: var(--shadow-sm); border: 1px solid rgba(255,255,255,0.6); transition: 0.2s; }
-        .review-card-isolated:hover { background: white; }
+        .review-card-isolated:hover { background: white; transform: translateY(-5px); }
         .review-user { display: flex; align-items: center; gap: 12px; margin-bottom: 15px; }
-        .user-avatar { width: 45px; height: 45px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary); font-size: 0.9rem; border: 2px solid white; }
+        .user-avatar { width: 45px; height: 45px; border-radius: 50%; background: #eef2ff; display: flex; align-items: center; justify-content: center; font-weight: 800; color: var(--primary); font-size: 0.9rem; border: 2px solid white; }
         .user-info strong { display: block; font-size: 1rem; }
         .user-info span { font-size: 0.75rem; color: #fbbf24; }
 
@@ -217,22 +252,73 @@
         .tips-list li { background: rgba(255, 255, 255, 0.9); padding: 30px; border-radius: 24px; margin-bottom: 25px; border-left: 6px solid var(--budget-color); box-shadow: var(--shadow-sm); transition: 0.3s; }
         .tips-list li strong { display: block; font-size: 1.3rem; color: var(--text-dark); margin-bottom: 10px; }
 
-        /* --- MENU GRID --- */
-        .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; }
-        .menu-item-box { background: var(--bg); padding: 20px; border-radius: 18px; border: 2px solid transparent; cursor: pointer; text-align: center; transition: 0.2s; }
-        .menu-item-box:hover, .menu-item-box.active { border-color: var(--primary); background: white; box-shadow: 0 10px 20px rgba(99, 102, 241, 0.1); }
-        .menu-item-box strong { font-size: 1.1rem; display: block; margin-bottom: 4px; }
-        .menu-item-box p { font-weight: 800; color: var(--primary); font-size: 1rem; }
+        /* --- MENU SIDEBAR --- */
+        .menu-grid { display: flex; flex-direction: column; gap: 12px; }
+        .menu-item-box { 
+            background: #f8fafc; 
+            padding: 18px; 
+            border-radius: 18px; 
+            border: 2px solid transparent; 
+            cursor: pointer; 
+            text-align: left; 
+            transition: 0.2s; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .menu-item-box:hover, .menu-item-box.active { border-color: var(--primary); background: white; box-shadow: 0 5px 15px rgba(99, 102, 241, 0.08); }
+        .menu-item-box strong { font-size: 1rem; display: block; }
+        .menu-item-box p { font-weight: 800; color: var(--primary); font-size: 0.95rem; }
 
-        footer { padding: 60px 5% 40px; text-align: center; color: var(--text-muted); font-size: 0.85rem; border-top: 1px solid rgba(0,0,0,0.05); margin-top: 50px; }
-        .footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 30px; }
-        .footer-links a { color: var(--text-muted); text-decoration: none; font-weight: 700; cursor: pointer; }
+        /* --- MINIMAL FOOTER --- */
+        footer { 
+            background-color: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(20px);
+            padding: 50px 5%; 
+            border-top: 1px solid rgba(255, 255, 255, 0.3); 
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+            margin-bottom: 25px;
+        }
+
+        .footer-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 700;
+            transition: 0.2s;
+            cursor: pointer;
+        }
+
+        .footer-links a:hover { color: var(--primary); }
+
+        .copyright {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
 
         @media (max-width: 900px) {
             .home-category-grid { grid-template-columns: 1fr; }
             .article-card { grid-template-columns: 1fr; min-height: auto; }
             .article-image-wrap { height: 180px; }
             .hero h1 { font-size: 2.8rem; }
+            
+            .detail-split-layout { grid-template-columns: 1fr; gap: 20px; }
+            .main-preview-img { height: 280px; }
+            .menu-grid { display: grid; grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -262,24 +348,24 @@
 
     <div class="container">
         
-        <!-- VIEW: HOME PAGE -->
+        <!-- HOME VIEW -->
         <section id="view-home" class="view-section active">
             <div class="hero"><h1>Eat. Study. <span>Save.</span></h1></div>
             <div class="site-intro-card">
-                <p>Welcome to the <strong>YPC Foodie Guide</strong>, a premium discovery platform curated specifically for the YPC International College student community. Our mission is to simplify your daily routine by mapping out the absolute best-value meals located within a <strong>5 to 10-minute walk</strong> from the college gates.</p>
+                <p>Welcome to <strong>YPC Foodie Guide</strong>, a discovery platform curated for the YPC International College student community. Our mission is to map out the best meals within a <strong>5 to 10-minute walk</strong> from the college gates.</p>
             </div>
 
             <div class="home-category-grid">
                 <div class="category-nav-card card-noodle" onclick="navigateTo('page-noodle')"><h3 style="color:var(--noodle-color);">Noodle Specialist</h3><p style="font-size: 0.85rem;">Handmade Pan Mee & spicy local bowls.</p></div>
-                <div class="category-nav-card card-budget" onclick="navigateTo('page-budget')"><h3 style="color:var(--budget-color);">Budget Champion</h3><p style="font-size: 0.85rem;">Maximum nutrition, minimum cost meals.</p></div>
+                <div class="category-nav-card card-budget" onclick="navigateTo('page-budget')"><h3 style="color:var(--budget-color);">Budget Champion</h3><p style="font-size: 0.85rem;">Balanced and wallet-friendly lunches.</p></div>
                 <div class="category-nav-card card-study" onclick="navigateTo('page-study')"><h3 style="color:var(--study-color);">Study Haven</h3><p style="font-size: 0.85rem;">WiFi zones & quiet academic focus spots.</p></div>
             </div>
 
-            <div class="section-title"><h2>Recent Popular</h2></div>
+            <div class="section-title"><h2>Trending Popular</h2></div>
             
             <div class="restaurant-list">
                 <article class="article-card" onclick="navigateTo('detail-xiao-ming')">
-                    <div class="article-image-wrap"><img src="xiaoming_restaurant.jpg"  class="article-image"></div>
+                    <div class="article-image-wrap"><img src="xiaoming_restaurant.jpg" class="article-image"></div>
                     <div class="article-content">
                         <span class="badge">Noodle</span>
                         <h2>Restoran Xiao Ming</h2>
@@ -293,19 +379,22 @@
                         <span class="badge">Budget</span>
                         <h2>Heong Kee Claypot Rice</h2>
                         <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:10px;">📍 Near Pudu Post Office</p>
-                        <p style="font-size: 0.95rem;">Traditional charcoal-cooked rice with crispy base and savory chicken. Massive portions.</p>
+                        <p style="font-size: 0.95rem;">Traditional charcoal-cooked rice with crispy base and savory chicken.</p>
                     </div>
                 </article>
             </div>
         </section>
 
-        <!-- NOODLE SPECIALIST -->
+        <!-- NOODLE LIST VIEW -->
         <section id="view-page-noodle" class="view-section">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="navigateTo('home')">← Back to Home</button>
+            </div>
             <div class="category-view-header"><h2>Noodle Specialists</h2></div>
             <div class="restaurant-list">
                 <article class="article-card" onclick="navigateTo('detail-xiao-ming')">
                     <div class="article-image-wrap"><img src="xiaoming_restaurant.jpg" class="article-image"></div>
-                    <div class="article-content"><span class="badge">Signature</span><h4>Restoran Ah Huat</h4><p style="font-size: 0.9rem;">Authentic hand-torn Pan Mee with signature spicy paste and fried anchovies.</p></div>
+                    <div class="article-content"><span class="badge">Signature</span><h4>Restoran Xiao Ming</h4><p style="font-size: 0.9rem;">Authentic hand-torn Pan Mee with signature spicy paste and fried anchovies.</p></div>
                 </article>
                 <article class="article-card" onclick="navigateTo('detail-curry-mee')">
                     <div class="article-image-wrap"><img src="curry_mee.jpg" class="article-image"></div>
@@ -314,48 +403,64 @@
             </div>
         </section>
 
-        <!-- BUDGET CHAMPION -->
+        <!-- BUDGET LIST VIEW -->
         <section id="view-page-budget" class="view-section">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="navigateTo('home')">← Back to Home</button>
+            </div>
             <div class="category-view-header"><h2>Budget Champions</h2></div>
             <div class="restaurant-list">
                 <article class="article-card" onclick="navigateTo('detail-claypot-rice')">
                     <div class="article-image-wrap"><img src="claypot_rice.jpg" class="article-image"></div>
-                    <div class="article-content"><span class="badge">Top Value</span><h4>Heong Kee Claypot Rice</h4><p style="font-size: 0.9rem;">Traditional claypot chicken rice cooked over real charcoal. Very filling.</p></div>
+                    <div class="article-content"><span class="badge">Top Value</span><h4>Heong Kee Claypot Rice</h4><p style="font-size: 0.9rem;">Traditional claypot chicken rice cooked over real charcoal.</p></div>
                 </article>
                 <article class="article-card" onclick="navigateTo('detail-chicken-rice')">
                     <div class="article-image-wrap"><img src="chicken_rice.jpg" class="article-image"></div>
-                    <div class="article-content"><span class="badge">Fast Meal</span><h4>Campus Chicken Rice</h4><p style="font-size: 0.9rem;">Quick service and tender chicken located right outside the main gate.</p></div>
+                    <div class="article-content"><span class="badge">Fast Meal</span><h4>Campus Chicken Rice</h4><p style="font-size: 0.9rem;">Quick service and tender chicken right outside the main gate.</p></div>
                 </article>
             </div>
         </section>
 
-        <!-- STUDY HAVEN -->
+        <!-- STUDY LIST VIEW -->
         <section id="view-page-study" class="view-section">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="navigateTo('home')">← Back to Home</button>
+            </div>
             <div class="category-view-header"><h2>Study Havens</h2></div>
             <div class="restaurant-list">
                 <article class="article-card" onclick="navigateTo('detail-study-cafe')">
                     <div class="article-image-wrap"><img src="cafe_1.jpg"  class="article-image"></div>
-                    <div class="article-content"><span class="badge">Productivity</span><h4>The Study Corner Cafe</h4><p style="font-size: 0.9rem;">Cozy environment with individual charging points and high-speed WiFi.</p></div>
+                    <div class="article-content"><span class="badge">Productivity</span><h4>The Study Corner Cafe</h4><p style="font-size: 0.9rem;">Cozy environment with individual charging points and WiFi.</p></div>
                 </article>
                 <article class="article-card" onclick="navigateTo('detail-learn-cafe')">
                     <div class="article-image-wrap"><img src="cafe_2.jpg"  class="article-image"></div>
-                    <div class="article-content"><span class="badge">Silence</span><h4>The Learn Centre Cafe</h4><p style="font-size: 0.9rem;">A quiet library-style cafe in Pudu Plaza, perfect for exam revision.</p></div>
+                    <div class="article-content"><span class="badge">Silence</span><h4>The Learn Centre Cafe</h4><p style="font-size: 0.9rem;">Quiet library-style cafe in Pudu Plaza, perfect for exam revision.</p></div>
                 </article>
             </div>
         </section>
 
-        <!-- DETAIL: AH HUAT -->
-        <section id="view-detail-xiao-ming" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-noodle')">← Back to List</button></div>
+        <!-- DETAIL: XIAO MING -->
+        <section id="view-detail-xiao-ming" class="view-section detail-group" data-default-src="xiaoming_restaurant.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-noodle')">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>Restoran Xiao Ming (Noodle Specialist)</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 15, Jalan Pudu, 55100 Kuala Lumpur</p>
-                <img id="img-xiao-ming" src="xiaoming_restaurant.jpg" class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-xiao-ming" class="food-description-text">Select a dish to explore its unique flavors.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'chili_panmee.jpg', 'Dry Chili Pan Mee (RM 9.50)', 'Springy handmade noodles served with a secret-recipe spicy chili paste, crispy anchovies, and a poached egg.', this)"><strong>Chili Pan Mee</strong><p>RM 9.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'wonton_mee.jpg', 'HK Wanton Mee (RM 8.50)', 'Springy egg noodles paired with plump shrimp wontons and savory dark soy sauce.', this)"><strong>Wanton Mee</strong><p>RM 8.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'curry_laksa.jpg', 'Traditional Curry Laksa (RM 10.50)', 'A creamy coconut milk broth with a hint of spice, topped with fried bean curd and fresh cockles.', this)"><strong>Curry Laksa</strong><p>RM 10.50</p></div>
+                <div class="detail-header">
+                    <h2>Restoran Xiao Ming</h2>
+                    <p style="color:var(--text-muted);">📍 15, Jalan Pudu, 55100 Kuala Lumpur</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-xiao-ming" src="xiaoming_restaurant.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-xiao-ming" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'chili_panmee.jpg', 'Chili Pan Mee (RM 9.50)', 'Handmade noodles with secret chili paste, crispy anchovies, and a poached egg.', this)"><strong>Chili Pan Mee</strong><p>RM 9.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'wonton_mee.jpg', 'Wanton Mee (RM 8.50)', 'Springy egg noodles with shrimp wontons and savory dark soy sauce.', this)"><strong>Wanton Mee</strong><p>RM 8.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'curry_laksa.jpg', 'Curry Laksa (RM 10.50)', 'Creamy coconut milk broth topped with fried bean curd and fresh cockles.', this)"><strong>Curry Laksa</strong><p>RM 10.50</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -370,17 +475,27 @@
         </section>
 
         <!-- DETAIL: CURRY MEE -->
-        <section id="view-detail-curry-mee" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-noodle')">← Back to List</button></div>
+        <section id="view-detail-curry-mee" class="view-section detail-group" data-default-src="curry_mee.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-noodle')">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>Sister's Curry Mee</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 Near Pudu wet market entrance</p>
-                <img id="img-curry" src="curry_mee.jpg" class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-curry" class="food-description-text">Select a dish to explore its unique flavors.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('curry', 'curry_mee1.jpg', 'Signature Curry Mee (RM 9.00)', 'Authentic Pudu style curry with a thick broth and a generous amount of cockles.', this)"><strong>Curry Mee</strong><p>RM 9.00</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('curry', 'dry_curry.jpg', 'Dry Curry Chicken (RM 9.50)', 'Noodles tossed in a concentrated curry gravy, served with tender potato chunks.', this)"><strong>Dry Curry Mee</strong><p>RM 9.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('curry', 'herbal_jelly.jpg', 'Traditional Herbal Jelly (RM 4.50)', 'Cooling herbal Guilinggao, perfect for balancing the heat after a spicy bowl.', this)"><strong>Herbal Jelly</strong><p>RM 4.50</p></div>
+                <div class="detail-header">
+                    <h2>Sister's Curry Mee</h2>
+                    <p style="color:var(--text-muted);">📍 Near Pudu wet market entrance</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-curry" src="curry_mee.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-curry" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'curry_mee1.jpg', 'Curry Mee (RM 9.00)', 'Authentic Pudu style curry with a thick broth and cockles.', this)"><strong>Curry Mee</strong><p>RM 9.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'dry_curry.jpg', 'Dry Curry Mee (RM 9.50)', 'Noodles tossed in a concentrated curry gravy with potato chunks.', this)"><strong>Dry Curry Mee</strong><p>RM 9.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'herbal_jelly.jpg', 'Herbal Jelly (RM 4.50)', 'Cooling herbal Guilinggao, perfect for balancing heat.', this)"><strong>Herbal Jelly</strong><p>RM 4.50</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -395,17 +510,27 @@
         </section>
 
         <!-- DETAIL: HEONG KEE -->
-        <section id="view-detail-claypot-rice" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-budget')">← Back to List</button></div>
+        <section id="view-detail-claypot-rice" class="view-section detail-group" data-default-src="claypot_rice.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-budget')">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>Heong Kee Claypot Chicken Rice</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 Jln. Pudu (Near Pudu Post Office)</p>
-                <img id="img-claypot" src="claypot_rice.jpg"  class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-claypot" class="food-description-text">Select a dish to explore its unique flavors.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('claypot', 'claypot_chicken.jpg', 'Signature Claypot Rice (RM 12.00)', 'Smoky charcoal-cooked rice with marinated chicken and salted fish aroma.', this)"><strong>Claypot Chicken</strong><p>RM 12.00</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('claypot', 'loushufun.jpg', 'Claypot Lou Shu Fun (RM 10.50)', 'Rat-tail noodles in savory gravy with minced meat and a silky raw egg on top.', this)"><strong>Lou Shu Fun</strong><p>RM 10.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('claypot', 'herbalSoup.jpg', 'Herbal Soup of the Day (RM 8.00)', 'Nutritious double-boiled soups perfect for a health boost.', this)"><strong>Herbal Soup</strong><p>RM 8.00</p></div>
+                <div class="detail-header">
+                    <h2>Heong Kee Claypot Chicken Rice</h2>
+                    <p style="color:var(--text-muted);">📍 Jln. Pudu (Near Pudu Post Office)</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-claypot" src="claypot_rice.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-claypot" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'claypot_chicken.jpg', 'Signature Claypot Rice (RM 12.00)', 'Smoky charcoal-cooked rice with marinated chicken and salted fish aroma.', this)"><strong>Claypot Chicken</strong><p>RM 12.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'loushufun.jpg', 'Claypot Lou Shu Fun (RM 10.50)', 'Rat-tail noodles in savory gravy with minced meat and a raw egg.', this)"><strong>Lou Shu Fun</strong><p>RM 10.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'herbalSoup.jpg', 'Herbal Soup of the Day (RM 8.00)', 'Nutritious double-boiled soups perfect for a health boost.', this)"><strong>Herbal Soup</strong><p>RM 8.00</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -420,17 +545,27 @@
         </section>
 
         <!-- DETAIL: CHICKEN RICE -->
-        <section id="view-detail-chicken-rice" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-budget')">← Back to List</button></div>
+        <section id="view-detail-chicken-rice" class="view-section detail-group" data-default-src="chicken_rice.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-budget')">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>Campus Chicken Rice</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 Right outside YPC Main Gate</p>
-                <img id="img-chicken" src="chicken_rice.jpg"  class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-chicken" class="food-description-text">Select a dish to explore its unique flavors.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('chicken', 'steam_chicken.jpg', 'Steamed Chicken Rice (RM 7.50)', 'Frangrant oil rice with silk-smooth steamed chicken drizzled in ginger soy sauce.', this)"><strong>Steamed Chicken</strong><p>RM 7.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('chicken', 'roasted_chicken.jpg', 'Roasted Chicken Rice (RM 7.50)', 'Crispy roasted chicken served with spicy garlic chili and ginger dip.', this)"><strong>Roasted Chicken</strong><p>RM 7.50</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('chicken', 'mix.jpg', 'Mix (RM 10.50)', 'Enhance your meal with different chicken options.', this)"><strong>Mix</strong><p>RM 10.50</p></div>
+                <div class="detail-header">
+                    <h2>Campus Chicken Rice</h2>
+                    <p style="color:var(--text-muted);">📍 Right outside YPC Main Gate</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-chicken" src="chicken_rice.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-chicken" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'steam_chicken.jpg', 'Steamed Chicken Rice (RM 7.50)', 'Fragrant oil rice with silk-smooth steamed chicken drizzled in soy.', this)"><strong>Steamed Chicken</strong><p>RM 7.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'roasted_chicken.jpg', 'Roasted Chicken Rice (RM 7.50)', 'Crispy roasted chicken served with spicy garlic chili and ginger dip.', this)"><strong>Roasted Chicken</strong><p>RM 7.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'mix.jpg', 'Mix (RM 10.50)', 'Enhance your meal with different chicken options.', this)"><strong>Mix</strong><p>RM 10.50</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -445,17 +580,27 @@
         </section>
 
         <!-- DETAIL: STUDY CAFE -->
-        <section id="view-detail-study-cafe" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-study')">← Back to List</button></div>
+        <section id="view-detail-study-cafe" class="view-section detail-group" data-default-src="cafe_1.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-study')">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>The Study Corner Cafe</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 5 mins walk from Chan Sow Lin LRT</p>
-                <img id="img-cafe" src="cafe_1.jpg" class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-cafe" class="food-description-text">Select an item for details.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('cafe', 'ice_americano.jpg', 'Iced Americano (RM 8.00)', 'Bold double-shot Arabica coffee to keep you focused for assignment nights.', this)"><strong>Iced Americano</strong><p>RM 8.00</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('cafe', 'chicken_chop.jpg', 'Grilled Chicken Chop (RM 16.90)', 'Tender grilled chicken leg served with crispy fries and signature pepper sauce.', this)"><strong>Chicken Chop</strong><p>RM 16.90</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('cafe', 'carbonara.jpg', 'Creamy Carbonara (RM 14.50)', 'Al dente spaghetti with turkey ham and rich mushroom cream.', this)"><strong>Carbonara</strong><p>RM 14.50</p></div>
+                <div class="detail-header">
+                    <h2>The Study Corner Cafe</h2>
+                    <p style="color:var(--text-muted);">📍 5 mins walk from Chan Sow Lin LRT</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-cafe" src="cafe_1.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-cafe" class="food-description-text">Select an item for details.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'ice_americano.jpg', 'Iced Americano (RM 8.00)', 'Bold double-shot Arabica coffee for assignment nights.', this)"><strong>Iced Americano</strong><p>RM 8.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'chicken_chop.jpg', 'Grilled Chicken Chop (RM 16.90)', 'Tender grilled chicken leg served with crispy fries.', this)"><strong>Chicken Chop</strong><p>RM 16.90</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'carbonara.jpg', 'Creamy Carbonara (RM 14.50)', 'Al dente spaghetti with turkey ham and mushroom cream.', this)"><strong>Carbonara</strong><p>RM 14.50</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -469,18 +614,29 @@
             </div>
         </section>
 
-        <!-- DETAIL: Cafe 2 -->
-        <section id="view-detail-learn-cafe" class="view-section">
-            <div class="back-btn-wrapper"><button class="back-btn-compact" onclick="navigateTo('page-study')">← Back to List</button></div>
+        <!-- DETAIL: LEARN CAFE -->
+        <section id="view-detail-learn-cafe" class="view-section detail-group" data-default-src="cafe_2.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="navigateTo('page-study')//
+                ">← Back to List</button>
+            </div>
             <div class="detail-card">
-                <h2>The Learn Centre Cafe</h2>
-                <p style="color:var(--text-muted); margin-bottom:20px;">📍 Pudu Plaza, 2nd Floor</p>
-                <img id="img-cafe2" src="cafe_2.jpg"  class="main-preview-img">
-                <div class="food-info-panel"><p id="desc-cafe2" class="food-description-text">Select an item for details.</p></div>
-                <div class="menu-grid">
-                    <div class="menu-item-box" onclick="updateMenu('cafe2', 'matcha_latte.jpg', 'Signature Uji Matcha (RM 12.00)', 'Pure Japanese matcha whisked with fresh milk. A calm drink for reading.', this)"><strong>Matcha Latte</strong><p>RM 12.00</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('cafe2', 'club_sandwich.jpg', 'Club Sandwich (RM 11.00)', 'Healthy wholemeal bread with egg mayo, fresh greens, and sliced cheese.', this)"><strong>Club Sandwich</strong><p>RM 11.00</p></div>
-                    <div class="menu-item-box" onclick="updateMenu('cafe2', 'butter_croissant.jpg', 'Butter Croissant (RM 7.00)', 'Flaky, buttery, and hand-baked daily. Perfect with hot tea.', this)"><strong>Butter Croissant</strong><p>RM 7.00</p></div>
+                <div class="detail-header">
+                    <h2>The Learn Centre Cafe</h2>
+                    <p style="color:var(--text-muted);">📍 Pudu Plaza, 2nd Floor</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-cafe2" src="cafe_2.jpg" class="main-preview-img">
+                        <div class="food-info-panel"><p id="desc-cafe2" class="food-description-text">Select an item for details.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'matcha_latte.jpg', 'Signature Uji Matcha (RM 12.00)', 'Pure Japanese matcha whisked with fresh milk.', this)"><strong>Matcha Latte</strong><p>RM 12.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'club_sandwich.jpg', 'Club Sandwich (RM 11.00)', 'Healthy wholemeal bread with egg mayo and fresh greens.', this)"><strong>Club Sandwich</strong><p>RM 11.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'butter_croissant.jpg', 'Butter Croissant (RM 7.00)', 'Flaky, buttery, and hand-baked daily.', this)"><strong>Butter Croissant</strong><p>RM 7.00</p></div>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="review-section-container">
@@ -494,26 +650,32 @@
             </div>
         </section>
 
-        <!-- ABOUT US -->
+        <!-- ABOUT VIEW (FULL RESTORED CONTENT) -->
         <section id="view-about" class="view-section">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="navigateTo('home')">← Back to Home</button>
+            </div>
             <div class="category-view-header"><h2>About <span>YPC Foodie</span></h2></div>
             <div class="detail-card">
                 <div class="text-content-wrapper">
                     <p class="text-paragraph">
-                        YPC Foodie Guide is a student-led digital initiative specifically designed for the <span class="text-emphasis">YPC International College</span> community. Our journey began with a common daily struggle: wandering through Pudu after lectures, unsure where to find a meal that was both affordable and high in quality.
+                        YPC Foodie Guide is a student-led digital initiative specifically designed for the <span style="color:var(--primary); font-weight:800;">YPC International College</span> community. Our journey began with a common daily struggle: wandering through Pudu after lectures, unsure where to find a meal that was both affordable and high in quality.
                     </p>
                     <p class="text-paragraph">
                         Our platform is built on three core pillars: <strong>Reliability, Proximity, and Community</strong>. Every recommendation featured here has been personally visited and tasted by our team members. We verify current prices and check for student-essential features like free WiFi and generous portions.
                     </p>
                     <p class="text-paragraph">
-                        We remain dedicated to sharing "insider" knowledge that only seasoned Pudu students know—like which stalls give extra gravy for free, or which cafes won't mind if you stay for hours during finals week. Together, we make student life better, one meal at a time.
+                        We remain dedicated to sharing "insider" knowledge that only seasoned Pudu students know—like which stalls give extra gravy for free, or which cafes won't mind if you stay for hours during finals week. Together，we make student life better，one meal at a time.
                     </p>
                 </div>
             </div>
         </section>
 
-        <!-- TIPS (精简为 5 条) -->
+        <!-- TIPS VIEW (FULL RESTORED CONTENT) -->
         <section id="view-tips" class="view-section">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="navigateTo('home')">← Back to Home</button>
+            </div>
             <div class="category-view-header"><h2>Student <span>Budget Tips</span></h2></div>
             <div class="detail-card">
                 <div class="text-content-wrapper">
@@ -531,16 +693,39 @@
 
     </div>
 
+    <!-- SIMPLE FOOTER -->
     <footer>
-        <p style="font-weight:800; color:var(--text-dark);">YPC FOODIE GUIDE.</p>
-        <div class="footer-links">
-            <a onclick="navigateTo('about')">About Us</a>
-            <a onclick="navigateTo('tips')">Budget Tips</a>
+        <div class="footer-content">
+            <a onclick="navigateTo('home')" class="logo">YPC FOODIE.</a>
+            <div class="footer-links">
+                <a onclick="navigateTo('home')">Home</a>
+                <a onclick="navigateTo('about')">About Us</a>
+                <a onclick="navigateTo('tips')">Budget Tips</a>
+            </div>
+            <p class="copyright">
+                &copy; 2024 YPC Student Foodie Guide. Curated for the YPC College community.
+            </p>
         </div>
     </footer>
 
     <script>
+        function resetShopStates() {
+            const menuBoxes = document.querySelectorAll('.menu-item-box');
+            menuBoxes.forEach(box => box.classList.remove('active'));
+
+            const detailSections = document.querySelectorAll('.detail-group');
+            detailSections.forEach(section => {
+                const defaultSrc = section.getAttribute('data-default-src');
+                const mainImg = section.querySelector('.main-preview-img');
+                const descText = section.querySelector('.food-description-text');
+
+                if (mainImg) mainImg.src = defaultSrc;
+                if (descText) descText.innerText = "Select a dish to explore its flavor.";
+            });
+        }
+
         function navigateTo(viewId) {
+            resetShopStates();
             const sections = document.querySelectorAll('.view-section');
             sections.forEach(s => s.classList.remove('active'));
             const target = document.getElementById('view-' + viewId);
@@ -553,6 +738,7 @@
             const descElement = document.getElementById('desc-' + shopKey);
             if(imgElement) imgElement.src = imgUrl;
             if(descElement) descElement.innerText = description;
+            
             const boxes = el.parentElement.getElementsByClassName('menu-item-box');
             for(let b of boxes) { b.classList.remove('active'); }
             el.classList.add('active');
