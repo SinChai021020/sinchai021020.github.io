@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YPC Foodie | Study Havens</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">YPC FOODIE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Categories ▾</a>
+                    <div class="dropdown-content">
+                        <a href="noodle.html">Noodle Specialist</a>
+                        <a href="budget.html">Budget Champion</a>
+                        <a href="study.html">Study Haven</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tips.html">Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- STUDY LIST VIEW -->
+        <section id="view-page-study" class="view-section active">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+            </div>
+            <div class="category-view-header"><h2>Study Havens</h2></div>
+            <div class="restaurant-list">
+                <article class="article-card" onclick="showInternalView('detail-study-cafe')">
+                    <div class="article-image-wrap"><img src="images/cafe_1.jpg"  class="article-image" alt="Study Cafe"></div>
+                    <div class="article-content"><span class="badge">Productivity</span><h4>The Study Corner Cafe</h4><p style="font-size: 0.9rem;">Cozy environment with individual charging points and WiFi.</p></div>
+                </article>
+                <article class="article-card" onclick="showInternalView('detail-learn-cafe')">
+                    <div class="article-image-wrap"><img src="images/cafe_2.jpg"  class="article-image" alt="Learn Cafe"></div>
+                    <div class="article-content"><span class="badge">Silence</span><h4>The Learn Centre Cafe</h4><p style="font-size: 0.9rem;">Quiet library-style cafe in Pudu Plaza, perfect for exam revision.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- DETAIL: STUDY CAFE -->
+        <section id="view-detail-study-cafe" class="view-section detail-group" data-default-src="images/cafe_1.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-study')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>The Study Corner Cafe</h2>
+                    <p style="color:var(--text-muted);">📍 5 mins walk from Chan Sow Lin LRT</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-cafe" src="images/cafe_1.jpg" class="main-preview-img" alt="Cafe">
+                        <div class="food-info-panel"><p id="desc-cafe" class="food-description-text">Select an item for details.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'images/ice_americano.jpg', 'Iced Americano (RM 8.00)', 'Bold double-shot Arabica coffee for assignment nights.', this)"><strong>Iced Americano</strong><p>RM 8.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'images/chicken_chop.jpg', 'Grilled Chicken Chop (RM 16.90)', 'Tender grilled chicken leg served with crispy fries.', this)"><strong>Chicken Chop</strong><p>RM 16.90</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe', 'images/carbonara.jpg', 'Creamy Carbonara (RM 14.50)', 'Al dente spaghetti with turkey ham and mushroom cream.', this)"><strong>Carbonara</strong><p>RM 14.50</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">R</div><div class="user-info"><strong>Rachel</strong><span>★★★★★</span></div></div>
+                        <p class="review-text">"Best WiFi in the area. study-friendly atmosphere with many charging points."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAIL: LEARN CAFE -->
+        <section id="view-detail-learn-cafe" class="view-section detail-group" data-default-src="images/cafe_2.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-study')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>The Learn Centre Cafe</h2>
+                    <p style="color:var(--text-muted);">📍 Pudu Plaza, 2nd Floor</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-cafe2" src="images/cafe_2.jpg" class="main-preview-img" alt="Cafe 2">
+                        <div class="food-info-panel"><p id="desc-cafe2" class="food-description-text">Select an item for details.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'images/matcha_latte.jpg', 'Signature Uji Matcha (RM 12.00)', 'Pure Japanese matcha whisked with fresh milk.', this)"><strong>Matcha Latte</strong><p>RM 12.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'images/club_sandwich.jpg', 'Club Sandwich (RM 11.00)', 'Healthy wholemeal bread with egg mayo and fresh greens.', this)"><strong>Club Sandwich</strong><p>RM 11.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('cafe2', 'images/butter_croissant.jpg', 'Butter Croissant (RM 7.00)', 'Flaky, buttery, and hand-baked daily.', this)"><strong>Butter Croissant</strong><p>RM 7.00</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">DW</div><div class="user-info"><strong>Daniel Wu</strong><span>★★★★★</span></div></div>
+                        <p class="review-text">"Extremely quiet. Perfect for project coding. The croissants are top notch!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer><div class="footer-content"><p class="copyright">&copy; 2024 YPC Student Foodie Guide.</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>

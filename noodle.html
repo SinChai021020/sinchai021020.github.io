@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YPC Foodie | Noodle Specialists</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">YPC FOODIE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Categories ▾</a>
+                    <div class="dropdown-content">
+                        <a href="noodle.html">Noodle Specialist</a>
+                        <a href="budget.html">Budget Champion</a>
+                        <a href="study.html">Study Haven</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tips.html">Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- DEFAULT LIST VIEW -->
+        <section id="view-page-noodle" class="view-section active">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+            </div>
+            <div class="category-view-header"><h2>Noodle Specialists</h2></div>
+            <div class="restaurant-list">
+                <!-- On click, we switch internal view using JS -->
+                <article class="article-card" onclick="showInternalView('detail-xiao-ming')">
+                    <div class="article-image-wrap"><img src="images/xiaoming_restaurant.jpg" class="article-image" alt="Xiao Ming"></div>
+                    <div class="article-content"><span class="badge">Signature</span><h4>Restoran Xiao Ming</h4><p style="font-size: 0.9rem;">Authentic hand-torn Pan Mee with signature spicy paste and fried anchovies.</p></div>
+                </article>
+                <article class="article-card" onclick="showInternalView('detail-curry-mee')">
+                    <div class="article-image-wrap"><img src="images/curry_mee.jpg" class="article-image" alt="Curry Mee"></div>
+                    <div class="article-content"><span class="badge">Market Gem</span><h4>Sister's Curry Mee</h4><p style="font-size: 0.9rem;">Rich coconut curry broth with fresh cockles and tender chicken chunks.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- DETAIL: XIAO MING -->
+        <section id="view-detail-xiao-ming" class="view-section detail-group" data-default-src="images/xiaoming_restaurant.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-noodle')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>Restoran Xiao Ming</h2>
+                    <p style="color:var(--text-muted);">📍 15, Jalan Pudu, 55100 Kuala Lumpur</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-xiao-ming" src="images/xiaoming_restaurant.jpg" class="main-preview-img" alt="Xiao Ming Preview">
+                        <div class="food-info-panel"><p id="desc-xiao-ming" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <!-- Full descriptions restored below -->
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'images/chili_panmee.jpg', 'Chili Pan Mee (RM 9.50)', 'Handmade noodles with secret chili paste, crispy anchovies, and a poached egg.', this)"><strong>Chili Pan Mee</strong><p>RM 9.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'images/wonton_mee.jpg', 'Wanton Mee (RM 8.50)', 'Springy egg noodles with shrimp wontons and savory dark soy sauce.', this)"><strong>Wanton Mee</strong><p>RM 8.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('xiao-ming', 'images/curry_laksa.jpg', 'Curry Laksa (RM 10.50)', 'Creamy coconut milk broth topped with fried bean curd and fresh cockles.', this)"><strong>Curry Laksa</strong><p>RM 10.50</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">AT</div><div class="user-info"><strong>Alex Tan</strong><span>★★★★★</span></div></div>
+                        <p class="review-text">"Springy noodles and actual spicy chili! Best student lunch spot in the area."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAIL: CURRY MEE -->
+        <section id="view-detail-curry-mee" class="view-section detail-group" data-default-src="images/curry_mee.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-noodle')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>Sister's Curry Mee</h2>
+                    <p style="color:var(--text-muted);">📍 Near Pudu wet market entrance</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-curry" src="images/curry_mee.jpg" class="main-preview-img" alt="Curry Mee Preview">
+                        <div class="food-info-panel"><p id="desc-curry" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <!-- Full descriptions restored below -->
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'images/curry_mee1.jpg', 'Curry Mee (RM 9.00)', 'Authentic Pudu style curry with a thick broth and cockles.', this)"><strong>Curry Mee</strong><p>RM 9.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'images/dry_curry.jpg', 'Dry Curry Mee (RM 9.50)', 'Noodles tossed in a concentrated curry gravy with potato chunks.', this)"><strong>Dry Curry Mee</strong><p>RM 9.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('curry', 'images/herbal_jelly.jpg', 'Herbal Jelly (RM 4.50)', 'Cooling herbal Guilinggao, perfect for balancing heat.', this)"><strong>Herbal Jelly</strong><p>RM 4.50</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">LW</div><div class="user-info"><strong>Li Wei</strong><span>★★★★☆</span></div></div>
+                        <p class="review-text">"Rich coconut broth. Definitely arrive before lunch peak as the cockles run out fast!"</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer>
+        <div class="footer-content"><p class="copyright">&copy; 2024 YPC Student Foodie Guide.</p></div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

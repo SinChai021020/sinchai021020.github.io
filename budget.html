@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YPC Foodie | Budget Champions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <header>
+        <nav>
+            <a href="index.html" class="logo">YPC FOODIE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Categories ▾</a>
+                    <div class="dropdown-content">
+                        <a href="noodle.html">Noodle Specialist</a>
+                        <a href="budget.html">Budget Champion</a>
+                        <a href="study.html">Study Haven</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tips.html">Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- BUDGET LIST VIEW -->
+        <section id="view-page-budget" class="view-section active">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact home-btn" onclick="window.location.href='index.html'">← Back to Home</button>
+            </div>
+            <div class="category-view-header"><h2>Budget Champions</h2></div>
+            <div class="restaurant-list">
+                <article class="article-card" onclick="showInternalView('detail-claypot-rice')">
+                    <div class="article-image-wrap"><img src="images/claypot_rice.jpg" class="article-image" alt="Claypot Rice"></div>
+                    <div class="article-content"><span class="badge">Top Value</span><h4>Heong Kee Claypot Rice</h4><p style="font-size: 0.9rem;">Traditional claypot chicken rice cooked over real charcoal.</p></div>
+                </article>
+                <article class="article-card" onclick="showInternalView('detail-chicken-rice')">
+                    <div class="article-image-wrap"><img src="images/chicken_rice.jpg" class="article-image" alt="Chicken Rice"></div>
+                    <div class="article-content"><span class="badge">Fast Meal</span><h4>Campus Chicken Rice</h4><p style="font-size: 0.9rem;">Quick service and tender chicken right outside the main gate.</p></div>
+                </article>
+            </div>
+        </section>
+
+        <!-- DETAIL: HEONG KEE -->
+        <section id="view-detail-claypot-rice" class="view-section detail-group" data-default-src="images/claypot_rice.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-budget')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>Heong Kee Claypot Rice</h2>
+                    <p style="color:var(--text-muted);">📍 Jln. Pudu (Near Pudu Post Office)</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-claypot" src="images/claypot_rice.jpg" class="main-preview-img" alt="Claypot">
+                        <div class="food-info-panel"><p id="desc-claypot" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'images/claypot_chicken.jpg', 'Signature Claypot Rice (RM 12.00)', 'Smoky charcoal-cooked rice with marinated chicken and salted fish aroma.', this)"><strong>Claypot Chicken</strong><p>RM 12.00</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'images/loushufun.jpg', 'Claypot Lou Shu Fun (RM 10.50)', 'Rat-tail noodles in savory gravy with minced meat and a raw egg.', this)"><strong>Lou Shu Fun</strong><p>RM 10.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('claypot', 'images/herbalSoup.jpg', 'Herbal Soup of the Day (RM 8.00)', 'Nutritious double-boiled soups perfect for a health boost.', this)"><strong>Herbal Soup</strong><p>RM 8.00</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">M</div><div class="user-info"><strong>Marcus</strong><span>★★★★★</span></div></div>
+                        <p class="review-text">"The charcoal flavor is authentic! Perfectly charred rice at the bottom. Great value."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DETAIL: CHICKEN RICE -->
+        <section id="view-detail-chicken-rice" class="view-section detail-group" data-default-src="images/chicken_rice.jpg">
+            <div class="back-btn-wrapper">
+                <button class="back-btn-compact" onclick="showInternalView('page-budget')">← Back to List</button>
+            </div>
+            <div class="detail-card">
+                <div class="detail-header">
+                    <h2>Campus Chicken Rice</h2>
+                    <p style="color:var(--text-muted);">📍 Right outside YPC Main Gate</p>
+                </div>
+                <div class="detail-split-layout">
+                    <div class="detail-visual">
+                        <img id="img-chicken" src="images/chicken_rice.jpg" class="main-preview-img" alt="Chicken Rice">
+                        <div class="food-info-panel"><p id="desc-chicken" class="food-description-text">Select a dish to explore its flavor.</p></div>
+                    </div>
+                    <div class="detail-menu">
+                        <div class="menu-grid">
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'images/steam_chicken.jpg', 'Steamed Chicken Rice (RM 7.50)', 'Fragrant oil rice with silk-smooth steamed chicken drizzled in soy.', this)"><strong>Steamed Chicken</strong><p>RM 7.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'images/roasted_chicken.jpg', 'Roasted Chicken Rice (RM 7.50)', 'Crispy roasted chicken served with spicy garlic chili and ginger dip.', this)"><strong>Roasted Chicken</strong><p>RM 7.50</p></div>
+                            <div class="menu-item-box" onclick="updateMenu('chicken', 'images/mix.jpg', 'Mix (RM 10.50)', 'Enhance your meal with different chicken options.', this)"><strong>Mix</strong><p>RM 10.50</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Review Section Restored -->
+            <div class="review-section-container">
+                <h3 class="review-title">Review</h3>
+                <div class="review-grid">
+                    <div class="review-card-isolated">
+                        <div class="review-user"><div class="user-avatar">S</div><div class="user-info"><strong>Sarah</strong><span>★★★★★</span></div></div>
+                        <p class="review-text">"Reliable chicken rice. Perfect when you only have 30 mins between classes."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+    <footer><div class="footer-content"><p class="copyright">&copy; 2024 YPC Student Foodie Guide.</p></div></footer>
+    <script src="script.js"></script>
+</body>
+</html>

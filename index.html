@@ -1,1 +1,111 @@
-# sinchai021020.github.io
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YPC Student Foodie | Home</title>
+    
+    <!-- ★ SEO SECTION ★ -->
+    <meta name="description" content="The complete student guide for dining near YPC International College. Full reviews, menus, and student saving tips.">
+    <meta name="keywords" content="YPC College, Student Food, Pudu Best Food, Cheap Eats KL">
+    
+    <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Background Blobs -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Navigation -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">YPC FOODIE.</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                    <a>Categories ▾</a>
+                    <div class="dropdown-content">
+                        <a href="noodle.html">Noodle Specialist</a>
+                        <a href="budget.html">Budget Champion</a>
+                        <a href="study.html">Study Haven</a>
+                    </div>
+                </li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="tips.html">Tips</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <!-- HOME MAIN VIEW -->
+        <section class="view-section active">
+            <div class="hero"><h1>Eat. Study. <span>Save.</span></h1></div>
+            <div class="site-intro-card">
+                <p>Welcome to <strong>YPC Foodie Guide</strong>, a discovery platform curated for the YPC International College student community. Our mission is to map out the best meals within a <strong>5 to 10-minute walk</strong> from the college gates.</p>
+            </div>
+
+            <!-- Category Links (Navigate to other HTML files) -->
+            <div class="home-category-grid">
+                <div class="category-nav-card card-noodle" onclick="window.location.href='noodle.html'">
+                    <h3 style="color:var(--noodle-color);">Noodle Specialist</h3>
+                    <p style="font-size: 0.85rem;">Handmade Pan Mee & spicy local bowls.</p>
+                </div>
+                <div class="category-nav-card card-budget" onclick="window.location.href='budget.html'">
+                    <h3 style="color:var(--budget-color);">Budget Champion</h3>
+                    <p style="font-size: 0.85rem;">Balanced and wallet-friendly lunches.</p>
+                </div>
+                <div class="category-nav-card card-study" onclick="window.location.href='study.html'">
+                    <h3 style="color:var(--study-color);">Study Haven</h3>
+                    <p style="font-size: 0.85rem;">WiFi zones & quiet academic focus spots.</p>
+                </div>
+            </div>
+
+            <div class="section-title"><h2>Trending Popular</h2></div>
+            
+            <!-- Trending Items (Link to specific sections in other files) -->
+            <div class="restaurant-list">
+                <article class="article-card" onclick="window.location.href='noodle.html#detail-xiao-ming'">
+                    <div class="article-image-wrap"><img src="images/xiaoming_restaurant.jpg" class="article-image" alt="Xiao Ming Restaurant"></div>
+                    <div class="article-content">
+                        <span class="badge">Noodle</span>
+                        <h2>Restoran Xiao Ming</h2>
+                        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:10px;">📍 5 mins walk • Pudu Area</p>
+                        <p style="font-size: 0.95rem;">Famous for spicy handmade chili and springy texture. A true YPC student icon.</p>
+                    </div>
+                </article>
+                <article class="article-card" onclick="window.location.href='budget.html#detail-claypot-rice'">
+                    <div class="article-image-wrap"><img src="images/claypot_rice.jpg" class="article-image" alt="Claypot Rice"></div>
+                    <div class="article-content">
+                        <span class="badge">Budget</span>
+                        <h2>Heong Kee Claypot Rice</h2>
+                        <p style="color:var(--text-muted); font-size:0.85rem; margin-bottom:10px;">📍 Near Pudu Post Office</p>
+                        <p style="font-size: 0.95rem;">Traditional charcoal-cooked rice with crispy base and savory chicken.</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <a href="index.html" class="logo">YPC FOODIE.</a>
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="tips.html">Budget Tips</a>
+            </div>
+            <p class="copyright">
+                &copy; 2024 YPC Student Foodie Guide. Curated for the YPC College community.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Link to external JS -->
+    <script src="script.js"></script>
+</body>
+</html>
