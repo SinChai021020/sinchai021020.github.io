@@ -120,7 +120,7 @@ nav {
 .dropdown-content a { display: block; padding: 12px 16px; border-radius: 10px; font-size: 0.85rem; margin-bottom: 2px; }
 .dropdown-content a:hover { background: var(--primary); color: white; }
 
-.container { max-width: 1200px; margin: 0 auto; padding: 0 5% 100px; position: relative; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5% 120px; position: relative; }
 .view-section { display: none; }
 .view-section.active { display: block; animation: fastFadeIn 0.15s ease-out; }
 @keyframes fastFadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -247,12 +247,19 @@ nav {
 .menu-item-box p { font-weight: 800; color: var(--primary); font-size: 0.95rem; }
 
 footer { 
-    background-color: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
-    padding: 50px 5%; 
-    border-top: 1px solid rgba(255, 255, 255, 0.3); 
-    margin-top: 50px;
-    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 15px 5%; 
+    text-align: center; 
+    color: var(--text-muted); 
+    font-size: 0.85rem; 
+    border-top: 1px solid rgba(0,0,0,0.05); 
+    z-index: 1000;
 }
 
 .footer-content {
